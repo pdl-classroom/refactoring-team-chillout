@@ -1,23 +1,21 @@
-name: Tests
+name: Automatic JUnit testing
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout du code source
+      - name: Checkout to the latest version
         uses: actions/checkout@v3
-
-      - name: Installer les dépendances
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y openjdk-11-jdk
-          ./gradlew assemble
-
-      - name: Exécuter les tests
-        run: ./gradlew test
+        
+      - name: Setup Java dependencies
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+          
+      - name: Run the Maven verify phase (Junit tests)
+        run: mvn --batch-mode --update-snapshots verify
