@@ -15,9 +15,9 @@ jobs:
 
       - name: Installer les dépendances
         run: |
-            sudo apt-get update
-            sudo apt-get install -y openjdk-14-jdk
-            ./gradlew assemble
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jdk
+          ./gradlew assemble
 
-      - name: Executer les tests
+      - name: Exécuter les tests
         run: ./gradlew test
