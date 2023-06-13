@@ -9,7 +9,7 @@ public class OrdersWriter {
     }
 
     public String getContents() {
-        StringBuilder sb = new StringBuilder("{\"orders\": [");
+        StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < orders.getOrdersCount(); i++) {
             Order order = orders.getOrder(i);

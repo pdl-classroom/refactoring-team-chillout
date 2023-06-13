@@ -23,7 +23,7 @@ public class Order {
         return products.get(j);
     }
 
-    public void addProduct(Product product) {
+    public void AddProduct(Product product) {
         products.add(product);
     }
 }

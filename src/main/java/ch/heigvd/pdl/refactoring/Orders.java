@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Orders {
 
-    private List<Order> ordersList = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 
-    public void addOrder(Order order) {
-        ordersList.add(order);
+    public void AddOrder(Order order) {
+        orders.add(order);
     }
 
     public int getOrdersCount() {
-        return ordersList.size();
+        return orders.size();
     }
 
     public Order getOrder(int i) {
-        return ordersList.get(i);
+        return orders.get(i);
     }
 
 }
